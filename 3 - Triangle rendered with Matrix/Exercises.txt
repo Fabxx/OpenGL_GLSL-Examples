@@ -1,0 +1,7 @@
+Exercises
+
+    Try changing the glm::perspective
+    Instead of using a perspective projection, use an orthographic projection (glm::ortho)
+    Modify ModelMatrix to translate, rotate, then scale the triangle
+    Do the same thing, but in different orders. What do you notice ? What is the “best” order that you would want to use for a character ?
+
