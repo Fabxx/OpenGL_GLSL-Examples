@@ -2,6 +2,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include "ShaderLoader.hh"
+#include "Check_ZBuffer.hh"
 #include "VertexArrayObjects.hh"
 #include "ColorBuffer.hh"
 #include "Matrixes.hh"
@@ -51,10 +52,8 @@
 		(i.e the new fragment is closer than the previous one).*/
 		
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		// Enable Z depth test, Accept fragment if it closer to the camera than the former one
-		glEnable(GL_DEPTH_TEST);
-		glDepthFunc(GL_LESS);
 		glUseProgram(programID); //initialize shader handler
+		check_zbuffer();
 		VertexArrayObjects(); //!HAS TO BE DONE BEFORE CALLING OTHER FUNCTIONS TO INIT THE BUFFERS.
 		colorBuffer();
 		projection_MatrixCube(&programID);
