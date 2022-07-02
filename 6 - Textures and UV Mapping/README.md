@@ -6,3 +6,7 @@
 
 # DDS Output (DXT1, DTX3, DTX5)
 <img src="outputDDS.jpg?raw=true" width="512" height="512">
+
+# DDS Zoomed 
+<img src="DDS_zoomed.jpg?raw=true" width="512" height="512">
+
