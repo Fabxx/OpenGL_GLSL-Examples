@@ -44,7 +44,7 @@
 	{
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glUseProgram(programID); //initialize shader handler
-		VertexArrayObjects();
+		VertexArrayObjects(); //remember, ALWAYS init the vertex/UV/any other buffer before going to do anything else.
 		projection_Matrix(&programID);
 		glfwSwapBuffers(window);
 		glfwPollEvents();
