@@ -73,14 +73,14 @@ glm::mat4 MVP;
 	// Camera matrix
 	View       = glm::lookAt(
 								glm::vec3(20,10,10), //this handles the camera positioning on XYZ screen coords.
-								glm::vec3(0,0,0), // and looks at the origin, camera is centerd to screen.
+								glm::vec3(0,0,0), //  camera is centerd to screen on boot.
 								glm::vec3(0,-1,0)  // Head is up (set to 0,-1,0 to look upside-down)
-												  /*this handles camera rotation on XYZ, value orientation:
-													 negative x = left, positive x = right. 
-													 negative y = upside down, positive y = normal view.
-													 negative z = behind the object, positive z = ahead object
-													 in World Space. NOTE: on x movement to right, the object might look squeezed,
-													 that's because it the camera prespective moving to the right*/
+										  /*this handles camera rotation on XYZ, value orientation:
+											 negative x = left, positive x = right. 
+											 negative y = upside down, positive y = normal view.
+											 negative z = behind the object, positive z = ahead object
+											 in World Space. NOTE: on x movement to right, the object might look squeezed,
+											 that's because it the camera prespective moving to the right*/
 						   );
 	// Model matrix : an identity matrix (model will be at the origin)
 	glm::mat4 Model      = glm::mat4(1.0f);
