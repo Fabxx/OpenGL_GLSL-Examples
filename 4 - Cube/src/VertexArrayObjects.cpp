@@ -2,6 +2,8 @@
 #include <GL/gl.h>
 #include "VertexArrayObjects.hh"
 
+GLuint vertexbuffer;
+
 void VertexArrayObjects()
 {
 	//Creating the VAO to store the vertices
@@ -67,13 +69,16 @@ static const GLfloat g_vertex_buffer_data[] = {
 	
 	//Giving to openGL the triangle
 	// This will identify our vertex buffer
-	GLuint vertexbuffer;
+	
 	// Generate 1 buffer, put the resulting identifier in vertexbuffer
 	glGenBuffers(1, &vertexbuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
-	
-	// 1st attribute buffer : vertices
+}
+
+void VertexArrayCompute()
+{
+    // 1st attribute buffer : vertices
 	glEnableVertexAttribArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
 	glVertexAttribPointer(

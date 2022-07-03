@@ -220,5 +220,12 @@ int DDS_texture_maker(DDSTexture *data)
     return textureID;
 }
 
+/*
+Inversing the UVs
+
+DXT compression comes from the DirectX world, where the V texture coordinate is inversed compared to
+ OpenGL. So if you use compressed textures, you’ll have to use ( coord.u, 1.0-coord.v) to fetch the correct 
+ texel. You can do this whenever you want : in your export script, in your loader, in your shader…*/
+
 
 

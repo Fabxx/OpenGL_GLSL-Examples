@@ -8,6 +8,9 @@ First, declare your colors : one RGB triplet per vertex. Here I generated some r
 
 // One color for each vertex. They were generated randomly.
 #include "ColorBuffer.hh"
+
+GLuint colorbuffer;
+
 void colorBuffer()
 {
 
@@ -62,12 +65,16 @@ void colorBuffer()
     };
 
     //this identifies the color buffer.
-	GLuint colorbuffer;
+	
 	glGenBuffers(1, &colorbuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(g_color_buffer_data), g_color_buffer_data, GL_STATIC_DRAW);
 
-    // 2st attribute buffer : colors
+}
+
+void colorBufferCompute()
+{
+     // 2st attribute buffer : colors
 	glEnableVertexAttribArray(1);
 	glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
 	glVertexAttribPointer(
@@ -78,5 +85,4 @@ void colorBuffer()
 		0,                  // stride
 		(void*)0            // array buffer offset
 	);
-
 }

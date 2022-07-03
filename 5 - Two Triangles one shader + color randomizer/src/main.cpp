@@ -42,15 +42,18 @@
 
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 	GLuint programID = LoadShaders("VertexShader.glsl", "FragmentShader.glsl");
+	check_zbuffer();
+	VertexArrayObjects();
+	projection_Matrix(&programID);
 	
 	do 
 	{
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glUseProgram(programID); //initialize shader handler
-		check_zbuffer();
-		VertexArrayObjects();
-		ColorBufferObjects();
-		projection_Matrix(&programID);
+		VertexArrayCompute();
+		ColorBufferObjects(); //in loop to generate more colors at runtime.
+		ColorBufferCOmpute();
+		MatrixCompute();
 		glDrawArrays(GL_TRIANGLES, 0, 6);
 
 		glDisableVertexAttribArray(0);

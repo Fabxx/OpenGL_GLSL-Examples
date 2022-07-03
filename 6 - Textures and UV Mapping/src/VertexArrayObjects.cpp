@@ -2,6 +2,9 @@
 #include <GL/gl.h>
 #include "VertexArrayObjects.hh"
 
+GLuint vertexbuffer;
+GLuint uvbuffer;
+
 void VertexArrayObjects()
 {
 	//Creating the VAO to store the vertices
@@ -16,12 +19,32 @@ void VertexArrayObjects()
    		0.0f,  1.0f, 0.0f,
 	}; 
 
-	GLuint vertexbuffer;
+	
 	glGenBuffers(1, &vertexbuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
+}
 
+void VertexUVMapping()
+{
+// Two UV coordinatesfor each vertex on X and Y axes. They were created with Blender. You'll learn shortly how to do this yourself.
+	static const GLfloat g_uv_buffer_data[] = 
+	{
+		0.000059f, 1.0f-0.000004f,
+		0.000103f, 1.0f-0.336048f,
+		0.335973f, 1.0f-0.335903f
+	};
+
+	glGenBuffers(1, &uvbuffer);
+	glBindBuffer(GL_ARRAY_BUFFER, uvbuffer);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(g_uv_buffer_data), g_uv_buffer_data, GL_STATIC_DRAW);
+
+}
+
+void VertexArrayCompute()
+{
 	glEnableVertexAttribArray(0);
+	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
 	glVertexAttribPointer(
 		0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
 		3,                  // size
@@ -32,30 +55,16 @@ void VertexArrayObjects()
 	);
 }
 
-void VertexUVMapping()
+void VertexUVCompute()
 {
-// Two UV coordinatesfor each vertex. They were created with Blender. You'll learn shortly how to do this yourself.
-	static const GLfloat g_uv_buffer_data[] = 
-	{
-		0.000059f, 1.0f-0.000004f,
-		0.000103f, 1.0f-0.336048f,
-		0.335973f, 1.0f-0.335903f,
-		1.000023f, 1.0f-0.000013f
-	};
-
-	GLuint uvbuffer;
-	glGenBuffers(1, &uvbuffer);
-	glBindBuffer(GL_ARRAY_BUFFER, uvbuffer);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(g_uv_buffer_data), g_uv_buffer_data, GL_STATIC_DRAW);
-
 	glEnableVertexAttribArray(1);
+	glBindBuffer(GL_ARRAY_BUFFER, uvbuffer);
 	glVertexAttribPointer(
-		1,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
+		1,                  // attribute 1. No particular reason for 1, but must match the layout in the shader.
 		2,                  // size of vector (UV is 2D vector)
 		GL_FLOAT,           // type
 		GL_FALSE,           // normalized?
 		0,                  // stride
 		(void*)0            // array buffer offset
 	);
-
 }

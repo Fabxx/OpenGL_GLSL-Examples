@@ -45,19 +45,22 @@
 	GLuint programID = LoadShaders("VertexShader.glsl", "FragmentShader.glsl");
 	texture data;
 	DDSTexture data2;
+	check_zbuffer();
+	VertexArrayObjects();
+	VertexUVMapping();
+	DDSReader(&data2);
+	//BMPreader(&data); use if working with BMP image
+	DDS_texture_maker(&data2);
+	//Mipmapping(); use with BMP
+	projection_Matrix(&programID);
 
 	do 
 	{
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glUseProgram(programID); //initialize shader handler
-		check_zbuffer();
-		VertexArrayObjects();
-		VertexUVMapping();
-		DDSReader(&data2);
-		//BMPreader(&data); use if working with BMP image
-		DDS_texture_maker(&data2);
-		//Mipmapping(); use with BMP
-		projection_Matrix(&programID);
+		VertexArrayCompute();
+		VertexUVCompute();
+		MatrixCompute();
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 		
 		glfwSwapBuffers(window);

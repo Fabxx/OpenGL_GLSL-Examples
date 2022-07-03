@@ -9,7 +9,7 @@ So here’s the code. It’s not very important to fully understand it, since yo
 Since this function will be used by all other tutorials, it is placed in a separate file : common/loadShader.cpp . Notice that just as buffers, 
 shaders are not directly accessible : we just have an ID. The actual implementation is hidden inside the driver.*/
 
-//NOTE: more shaders may be required in the future so you'll need to add more glsl files and more functions to read them, etc.
+//NOTE: more shaders may be required in the future so you'll need to add more files, etc.
 #include <fstream>
 #include <string>
 #include <vector>

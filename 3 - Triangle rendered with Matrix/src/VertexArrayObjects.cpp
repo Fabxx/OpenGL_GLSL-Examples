@@ -2,6 +2,10 @@
 #include <GL/gl.h>
 #include "VertexArrayObjects.hh"
 
+//Giving to openGL the triangle
+// This will identify our vertex buffer
+GLuint vertexbuffer;
+
 void VertexArrayObjects()
 {
 	//Creating the VAO to store the vertices
@@ -18,16 +22,17 @@ void VertexArrayObjects()
    		0.0f,  1.0f, 0.0f,
 	}; //X, Y, Z, each 3 coords represent a vertex axis, modyfing these will edit the vertex coordinates, not the size of the triangle
 
-	//Giving to openGL the triangle
-	// This will identify our vertex buffer
-	GLuint vertexbuffer;
+	
 	// Generate 1 buffer, put the resulting identifier in vertexbuffer
 	glGenBuffers(1, &vertexbuffer);
 	// The following commands will talk about our 'vertexbuffer' buffer
 	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
 	// Give our vertices to OpenGL.
 	glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
+}
 
+void VertexArrayCompute()
+{
 	// 1st attribute buffer : vertices
 	glEnableVertexAttribArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);

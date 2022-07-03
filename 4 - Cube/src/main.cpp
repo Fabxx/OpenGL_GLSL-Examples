@@ -41,6 +41,9 @@
 
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 	GLuint programID = LoadShaders("VertexShader.glsl", "FragmentShader.glsl");
+	VertexArrayObjects();
+	colorBuffer();
+	projection_MatrixCube(&programID);
 	
 	do 
 	{
@@ -54,9 +57,10 @@
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glUseProgram(programID); //initialize shader handler
 		check_zbuffer();
-		VertexArrayObjects(); //!HAS TO BE DONE BEFORE CALLING OTHER FUNCTIONS TO INIT THE BUFFERS.
-		colorBuffer();
-		projection_MatrixCube(&programID);
+		VertexArrayCompute();
+		colorBufferCompute();
+		MatrixCompute();
+		
 		// Draw the triangle !
 		glDrawArrays(GL_TRIANGLES, 0, 12*3); // Starting from vertex 0; draw 12*3 vertices total -> 12 triangles
 		glDisableVertexAttribArray(0);

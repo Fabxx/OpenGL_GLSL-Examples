@@ -39,13 +39,14 @@ int window_init()
 
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 	GLuint programID = LoadShaders("VertexShader.glsl", "FragmentShader.glsl");
+	VertexArrayObject(); //call whatever you want to create and apply the effects over it.
 	
 
 	do 
 	{
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glUseProgram(programID); //initialize shader handler
-		VertexArrayObject(); //call whatever you want to create and apply the effects over it.
+		VertexArrayCompute();
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 

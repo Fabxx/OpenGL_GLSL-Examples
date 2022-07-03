@@ -39,13 +39,18 @@
 
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 	GLuint programID = LoadShaders("VertexShader.glsl", "FragmentShader.glsl");
+	VertexArrayObjects();
+	projection_Matrix(&programID);
 	
 	do 
 	{
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glUseProgram(programID); //initialize shader handler
-		VertexArrayObjects(); //remember, ALWAYS init the vertex/UV/any other buffer before going to do anything else.
-		projection_Matrix(&programID);
+		VertexArrayCompute();
+		MatrixCompute();
+		// Draw the triangle !
+		glDrawArrays(GL_TRIANGLES, 0, 3); // Starting from vertex 0; 3 vertices total -> 1 triangle
+		glDisableVertexAttribArray(0);
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 
