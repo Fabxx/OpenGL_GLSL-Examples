@@ -1,9 +1,10 @@
 #include <iostream>
 #include <GL/glew.h>
 #include <GL/freeglut.h>
-#include "ogldev_math_3d.h"
 
 GLuint VBO; //Vertex Buffer to store vertices
+
+//NOTE: Next tutorials won't have everything in main and are separated to make the code more readable.
 
 /*Each parameter in here indicates to GL that we are going to use the stuff that we create*/
 static void RenderSceneCB()
@@ -62,18 +63,19 @@ static void CreateVertexBuffer()
   **/
   glEnable(GL_CULL_FACE); //inverts front face with backface rendering via clockwise handling.
   //Vector of 3 float values, can contain only 3 float for each position.
-  Vector3f Vertices[3];
-  //0 = x, 1 = y, 2 = z.
-  Vertices[0] =   {-1.0f, -1.0f, 0.0f}; //bottom left
-  Vertices[1] =   {0.0f, 1.0f, 0.0f}; //bottom right
-  Vertices[2] =   {1.0f, -1.0f, 0.0f}; //top, these coordinates are based on xyz positions.
-
+  static const GLfloat vertex[] = 
+  {
+	  //0 = x, 1 = y, 2 = z.
+	  -1.0f, -1.0f, 0.0f, //bottom left
+	  0.0f, 1.0f, 0.0f, //bottom right
+	  1.0f, -1.0f, 0.0f //top, these coordinates are based on xyz positions.
+  }
   //allocating memory to the vertex buffer object which will contain the vertex data.
   glGenBuffers(1, &VBO);
 
   //Bind the buffer in the GPU memory that will be used, with the vertex attributes.
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_STATIC_DRAW);
+  glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex), Vertex, GL_STATIC_DRAW);
 
 }
 
