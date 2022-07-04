@@ -23,7 +23,7 @@ static void CreateVertexBuffer()
   ** GL_STATIC_DRAW: populate the buffer once, and use it multiple times
   **/
 
-  //Vector of 3 float values, can contain only 3 float for each position.
+  //Vector of xyz vertices
   static const GLfloat g_vertex_buffer[] =
   {
 	-1.0f, -1.0f, 0.0f, //bottom left
