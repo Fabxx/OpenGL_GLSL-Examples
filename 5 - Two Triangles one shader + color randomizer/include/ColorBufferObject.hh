@@ -1,7 +1,0 @@
-#ifndef D8818CF0_D118_4C5C_AD68_B130C949289F
-#define D8818CF0_D118_4C5C_AD68_B130C949289F
-
-void ColorBufferObjects();
-void ColorBufferCOmpute();
-
-#endif /* D8818CF0_D118_4C5C_AD68_B130C949289F */

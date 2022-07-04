@@ -1,7 +1,0 @@
-#ifndef D03898BC_9046_4648_A6CD_20117CC4CC0E
-#define D03898BC_9046_4648_A6CD_20117CC4CC0E
-#include <GLFW/glfw3.h>
-
-;void check_zbuffer();
-
-#endif /* D03898BC_9046_4648_A6CD_20117CC4CC0E */
