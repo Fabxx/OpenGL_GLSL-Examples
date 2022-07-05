@@ -10,5 +10,6 @@ uniform float scaling;
 void main()
  {
      gl_Position = vec4(scaling * Position.x, scaling * Position.y, Position.z, 1.0);
+     //alternative writing: gl_Position.xyzw = vec4(scaling * Position, 1.0);
      FragColor = colors;
  }
