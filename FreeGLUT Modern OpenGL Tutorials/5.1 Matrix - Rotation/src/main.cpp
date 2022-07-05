@@ -20,7 +20,7 @@ static void RotationMatrix()
 
 	/** FOrmula Details:
 	 **The first line creates a new 4-by-4 matrix and initializes it to the identity matrix. 
-	 **The glm::rotate function multiplies this matrix by a rotation transformation of 180 degrees around the Z axis. 
+	 **The glm::rotate function multiplies this matrix by a rotation transformation of "AngleinRadians" degrees around the Z axis. 
 	 **Remember that since the screen lies in the XY plane, the Z axis is the axis you want to rotate points around.
 	 */
 	glm::mat4 RotationMatrix = glm::mat4(1.0f);
