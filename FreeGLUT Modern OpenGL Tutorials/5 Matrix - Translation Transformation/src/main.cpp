@@ -18,14 +18,16 @@ static void TranslationMatrix()
 		scale = 0.0f;
 	}
 
-	glm::mat4 Matrix = 
-	glm::mat4
-	(
-		1.0f, 0.0f, 0.0f, 0.0f, //x camera (left/right)
-		0.0f, 1.0f, 0.0f, scale *2, //y camera (ahead/behind)
-		0.0f, 0.0f, 1.0f, 0.0f, //z camera (up/down), 0.0 = 2D view, only left, right ahead, behind.
-		0.0f, 0.0f, 0.0f, 1.0f  //w camera, always set at 1.0f
-	);
+	/** FOrmula Details:
+	 **The first line creates a new 4-by-4 matrix and initializes it to the identity matrix. 
+	 **The glm::translate function overwrites this matrix by a position transformation of "scale" coordinate around the Y axis. 
+	 **NOTE: glm::translate inverts the XY axes orientation, see the glUniformMatrix4fv below.
+	 **Remember that since the screen lies in the XY plane, and this is a 2D object the XY axes are the axes you want to move the camera around.
+	 **If you work with a 3D object you can move on the Z axis too. If the value is positive it will go Down-leftm if it's negative  it will go up right
+	 */
+
+	glm::mat4 ViewMatrix = glm::mat4(1.0f);
+	ViewMatrix = glm::translate(ViewMatrix, glm::vec3(scale, scale, 0.0f));
 
 	/**Gives matrix to shader, in detail:
 	 **glUniformMatrix4vf: gives to the shader a 4x4 matrix with float values
@@ -34,8 +36,9 @@ static void TranslationMatrix()
 	 **GL_TRUE indicates if we give the values in ROW order or COLUMN order. So the read order of
 	 **the values changes with this orientation. FALSE reads by column, TRUE Reads by row.
 	 **Memory address of the Matrix array. tells the start point of where it should load the 4x4 float values.
+	 **NOTE: Setting to FALSE since glm::translate inverts the X and Y axis
 	 */
-	glUniformMatrix4fv(Matrix_Translation_Location, 1, GL_TRUE, &Matrix[0][0]);
+	glUniformMatrix4fv(Matrix_Translation_Location, 1, GL_FALSE, &ViewMatrix[0][0]);
 
 	glClear(GL_COLOR_BUFFER_BIT);
 	glDrawArrays(GL_TRIANGLES, 0, 3);
