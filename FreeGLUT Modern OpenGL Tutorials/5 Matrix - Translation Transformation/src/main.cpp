@@ -20,7 +20,7 @@ static void TranslationMatrix()
 
 	/** FOrmula Details:
 	 **The first line creates a new 4-by-4 matrix and initializes it to the identity matrix. 
-	 **The glm::translate function overwrites this matrix by a position transformation of "scale" coordinate around the Y axis. 
+	 **The glm::translate function overwrites this matrix by a position transformation of "scale" coordinate around the XY axis. 
 	 **NOTE: glm::translate inverts the XY axes orientation, see the glUniformMatrix4fv below.
 	 **Remember that since the screen lies in the XY plane, and this is a 2D object the XY axes are the axes you want to move the camera around.
 	 **If you work with a 3D object you can move on the Z axis too. If the value is positive it will go Down-leftm if it's negative  it will go up right
