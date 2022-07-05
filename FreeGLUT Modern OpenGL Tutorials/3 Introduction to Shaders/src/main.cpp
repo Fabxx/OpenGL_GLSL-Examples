@@ -23,7 +23,7 @@ int main(void)
 	CompileShaders();
 	
 	glClear(GL_COLOR_BUFFER_BIT);
-	//Calling DIsplay rendering after everything has been buffered.
+	//Calling DIsplay rendering for triangles after everything has been buffered.
 	glutDisplayFunc(RenderSceneCallBack);
 	glutMainLoop(); 
 
