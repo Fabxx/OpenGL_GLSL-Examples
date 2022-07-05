@@ -23,7 +23,6 @@ int main(void)
 	CompileShaders();
 	
 	glClear(GL_COLOR_BUFFER_BIT);
-	glDrawArrays(GL_TRIANGLES, 0, 3);
 	//Calling DIsplay rendering after everything has been buffered.
 	glutDisplayFunc(RenderSceneCallBack);
 	glutMainLoop(); 
