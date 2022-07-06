@@ -22,7 +22,7 @@ void RotationMatrix()
 	 **you'll understand this better. 
 	 */
 	glm::mat4 RotationMatrix = glm::mat4(1.0f);
-	RotationMatrix = glm::rotate(RotationMatrix, glm::radians(AngleinRadians), glm::vec3(0.0f, 0.0f, AngleInRadians));
+	RotationMatrix = glm::rotate(RotationMatrix, glm::radians(AngleinRadians), glm::vec3(0.0f, 0.0f, 1.0f));
 
 
 	glUniformMatrix4fv(Matrix_Rotation_Location, 1, GL_TRUE, &RotationMatrix[0][0]);
