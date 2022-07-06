@@ -5,8 +5,8 @@
  ** the vector is declared as "out", meaning that from that vector will be outputted colored vertices 
  ** from VertexShader.glsl
  */
-in vec4 FragColor;
-out vec4 interpolatedColors;
+in vec3 FragColor;
+out vec3 interpolatedColors;
 void main()
 {
   interpolatedColors = FragColor;
