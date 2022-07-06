@@ -8,7 +8,10 @@
  **wich couldn't be changed at runtime in GLSL vertex shader.  
  **glUniform1f it's used to access uniform data in GLSL files, and update them.
  **Here we are updating the uniform retreived from the shader.
- **NOTE: this is equivalent to the scaling matrix.
+ **NOTE: this is equivalent to the scaling matrix, but it's more redundant to handle all the axes.
+ **you need 3 float uniforms in the shader in this case if you want to edit the XYZ axis
+ **with the matrix you just multiply the matrix with a vector3, and in that vector you replace
+ **the float with the value you want to multiply with.
 */ 
 
 void UpdateUniforms()
