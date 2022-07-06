@@ -6,7 +6,7 @@
 GLuint VBO;
 GLint Matrix_Rotation_Location;
 
-//Matrix that rotates the camera, can be done statically or dynamically
+//Matrix that rotates the vertices, can be done statically or dynamically
 static void RotationMatrix()
 {
 	static float AngleinRadians = 0.0f;
