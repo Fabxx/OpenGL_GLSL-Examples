@@ -6,24 +6,25 @@
 GLuint VBO;
 GLint Matrix_Translation_Location;
 
-//Matrix that moves the camera, can be done statically or dynamically
+//Matrix that moves the vertices, can be done statically or dynamically
 static void TranslationMatrix()
 {
-	static float scale = 0.0f;
+	static float move = 0.0f;
 	static float multiplier = 0.005f;
-	scale += multiplier; //edit this value that will be used in the axis to see changes.
+	move += multiplier; //edit this value that will be used in the axis to see changes.
 
-	if (scale >= 1.0f)
+	if (move >= 1.0f)
 	{
-		scale = 0.0f;
+		move = 0.0f;
 	}
 
 	/** FOrmula Details:
 	 **The first line creates a new 4-by-4 matrix and initializes it to the identity matrix. 
-	 **The glm::translate function overwrites this matrix by a position transformation of "scale" coordinate around the XY axis. 
-	 **NOTE: glm::translate inverts the XY axes orientation, see the glUniformMatrix4fv below.
-	 **Remember that since the screen lies in the XY plane, and this is a 2D object the XY axes are the axes you want to move the camera around.
-	 **If you work with a 3D object you can move on the Z axis too. If the value is positive it will go Down-leftm if it's negative  it will go up right
+	 **The glm::translate function overwrites this matrix by a position transformation of "move" coordinate around the XY axis. 
+	 **NOTE: glm::translate inverts the XY axes orientation, If the value is positive it will go Down-left if it's negative it will go up right. 
+	 **see the glUniformMatrix4fv below.
+	 **Remember that since the screen lies in the XY plane, and this is a 2D object the XY axes are the axes you want to move the object around.
+	 **If you work with a 3D object you can move on the Z axis too. 
 	 */
 
 	glm::mat4 ViewMatrix = glm::mat4(1.0f);
