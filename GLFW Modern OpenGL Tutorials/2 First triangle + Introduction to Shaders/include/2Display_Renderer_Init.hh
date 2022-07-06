@@ -1,0 +1,7 @@
+#ifndef BB7FAAD6_DD31_4A3C_8994_0C33E2240019
+#define BB7FAAD6_DD31_4A3C_8994_0C33E2240019
+#include "0Common_headers.hh"
+
+void WindowInitRender();
+
+#endif /* BB7FAAD6_DD31_4A3C_8994_0C33E2240019 */
