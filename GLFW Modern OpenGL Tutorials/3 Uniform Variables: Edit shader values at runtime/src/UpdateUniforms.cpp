@@ -8,6 +8,7 @@
  **wich couldn't be changed at runtime in GLSL vertex shader.  
  **glUniform1f it's used to access uniform data in GLSL files, and update them.
  **Here we are updating the uniform retreived from the shader.
+ **NOTE: this is equivalent to the scaling matrix.
 */ 
 
 void UpdateUniforms()
