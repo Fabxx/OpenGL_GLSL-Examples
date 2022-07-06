@@ -12,6 +12,7 @@
  **you need 3 float uniforms in the shader in this case if you want to edit the XYZ axis
  **with the matrix you just multiply the matrix with a vector3, and in that vector you replace
  **the float with the value you want to multiply with.
+ **See the Matrix - Scale chapter.
 */ 
 
 void UpdateUniforms()
