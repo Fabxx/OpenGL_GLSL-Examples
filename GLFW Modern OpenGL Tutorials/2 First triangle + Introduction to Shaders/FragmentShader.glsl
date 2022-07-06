@@ -10,10 +10,9 @@ out vec4 color;
 void main()
 {
   /**
-  **When we use a single vec4/vec3 vector for colors, each value represents directly an axis
-  **if we use a vec4/vec3 of [3]/[4] size, we have 3/4 3D/4D vectors, each vector will represent
-  **an axis, and each axis will have three RGB components instead, because we're initializing the 
-  **color for the axes individually, see the Vertex Interpolation in shader/source code chapter.
+  **If using one vector for color output, we give one color for XYZ.
+  **If we use one vector for each axis, we give three different colors in XYZ-
+  **see Vertex Interpolation chapter.
   */
   color = vec4(0.0,0.5,0.7,0.0);
 }
