@@ -1,7 +1,7 @@
 #include "Common_headers.hh"
 #include "ScaleMatrix.hh"
 
-//Matrix that rotates the object, can be done statically or dynamically
+//Matrix that scales the object, can be done statically or dynamically
 void ScaleMatrix()
 {
 	static float scale = 0.0f;
