@@ -14,10 +14,12 @@ void CreateVertexBuffer()
 
 /**loads the attributes of our vertexes into the VBO.
   In Detail:
-  ** GL_ARRAY_BUFFER: Target that was binded before
-  ** Size of the buffer in bytes
-  ** Pointer to the buffer
-  ** GL_STATIC_DRAW: populate the buffer once, and use it multiple times
+  **We first generate one buffer that can store data into VBO
+  ** We bind this target to openGL via GL_ARRAY_BUFFER: indicates that the vertex values have to be packed as an array.
+  ** Writing data into this buffer following these arguments:
+  **-Size of the buffer in bytes
+  **-Pointer to the buffer
+  **-GL_STATIC_DRAW: populate the buffer once, and use it multiple times
   **/
   glGenBuffers(1, &VBO);
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
