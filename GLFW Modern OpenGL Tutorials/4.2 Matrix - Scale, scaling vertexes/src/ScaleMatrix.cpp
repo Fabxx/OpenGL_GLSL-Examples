@@ -28,5 +28,5 @@ void ScaleMatrix()
 	glm::mat4 ScaleMatrix = glm::mat4(1.0f);
 	ScaleMatrix = glm::scale(ScaleMatrix, glm::vec3(scale, scale, 1.0f));
 
-	glUniformMatrix4fv(Matrix_Scale_Location, 1, GL_TRUE, &ScaleMatrix[0][0]);
+	glUniformMatrix4fv(Matrix_Scale_Location, 1, GL_FALSE, &ScaleMatrix[0][0]);
 }
