@@ -2,13 +2,6 @@
 
 void CreateVertexBuffer()
 {
-	/**loads the attributes of our vertexes into the VBO.
-	  In Detail:
-	  ** GL_ARRAY_BUFFER: Target that was binded before
-	  ** Size of the buffer in bytes
-	  ** Pointer to the buffer
-	  ** GL_STATIC_DRAW: populate the buffer once, and use it multiple times
-	  **/
 	//A vertex is composed of 3 screen coordinates: X, Y and Z. we need an array to sotre these coordinates.
 	static const GLfloat g_vertex_buffer_data[] = 
 	{
@@ -17,15 +10,24 @@ void CreateVertexBuffer()
    		0.0f,  1.0f, 0.0f //top
 	};
 
-  /**
-   **Generate a buffer on VBO which contans a block of data representing our vertices, but GL doesn't know what this data is yet
-   **So, we first bind the VBO with the data to be sended, then we generate an object that tells to GL, that this is an Array of
-   **vertices with the attributes and coordinates, the VAO. It works as an interpreter of the data stored in the buffer.
-   */
+  
+
+/**loads the attributes of our vertexes into the VBO.
+  In Detail:
+  ** GL_ARRAY_BUFFER: Target that was binded before
+  ** Size of the buffer in bytes
+  ** Pointer to the buffer
+  ** GL_STATIC_DRAW: populate the buffer once, and use it multiple times
+  **/
   glGenBuffers(1, &VBO);
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
   glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
-
+  
+/**
+   **We Generated a buffer on VBO which contans a block of data representing our vertices, but GL doesn't know what this data is yet
+   **So, we first bind the VBO with the data to be sended, then we generate an object that tells to GL, that this is an Array of
+   **vertices with the attributes and coordinates, the VAO (Vertex Array Object). It works as an interpreter of the data stored in the buffer.
+   */
   glGenVertexArrays(1, &VAO);
   glBindVertexArray(VAO);
   
