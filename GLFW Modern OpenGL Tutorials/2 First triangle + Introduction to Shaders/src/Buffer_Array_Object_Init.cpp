@@ -2,7 +2,7 @@
 
 void CreateVertexBuffer()
 {
-	//A vertex is composed of 3 screen coordinates: X, Y and Z. we need an array to sotre these coordinates.
+	//A vertex is composed of 3 screen coordinates: X, Y and Z. we need an array to store these coordinates.
 	static const GLfloat g_vertex_buffer_data[] = 
 	{
 		-1.0f, -1.0f, 0.0f, //bottom left
