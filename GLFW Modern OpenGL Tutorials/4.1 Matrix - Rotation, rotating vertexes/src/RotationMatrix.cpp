@@ -18,8 +18,7 @@ void RotationMatrix()
 	 **The glm::rotate function multiplies this matrix by a rotation transformation of "AngleinRadians" degrees around the Z axis. 
 	 **So the multiplication in this case is between (AngleInRadians multiplied by z axis).
 	 **Remember that since the screen lies in the XY plane, the Z axis is the axis you want to rotate with a 2D object.
-	 **with a 3D object, you can rotate in all of the XYZ coordinates, BUT NOTE: YOU CAN ROTATE ONLY ON ONE AXIS PER TIME
-	 **(just like blender, you choose one rotation at time, DON'T BIND MULTIPLE ROTATION AXES AT THE SAME TIME.)
+	 **with a 3D object, you can rotate in all of the XYZ coordinates.
 	 **Draw a XY cartesian graph and add a Z axis in between,then draw a circle around the graph starting from the Z axis line, 
 	 **you'll understand this better. 
 	 */
@@ -28,5 +27,5 @@ void RotationMatrix()
 	RotationMatrix = glm::rotate(RotationMatrix, glm::radians(AngleinRadians), glm::vec3(0.0f, 0.0f, 1.0f));
 
 
-	glUniformMatrix4fv(Matrix_Rotation_Location, 1, GL_TRUE, &RotationMatrix[0][0]);
+	glUniformMatrix4fv(Matrix_Rotation_Location, 1, GL_FALSE, &RotationMatrix[0][0]);
 }
