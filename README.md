@@ -1,5 +1,5 @@
 # OpenGL_GLSL-Examples
 Made for personal study.
 
-These examples are made to represent COmputer 3D/2D Graphics with OpenGL and GLSL shading language.
+These examples are made to represent Computer 3D/2D Graphics with OpenGL and GLSL shading language.
 
