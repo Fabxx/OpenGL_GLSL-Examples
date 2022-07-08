@@ -4,7 +4,7 @@ static void RandomizeColor(GLfloat values[])
 {
   srand(time(0));
 
-  for (size_t i = 0; i < 36; i++)
+  for (size_t i = 0; i < 108; i++)
   {
     values[i] = (float)rand()/(float)(RAND_MAX/1.0f);
   }
@@ -12,7 +12,7 @@ static void RandomizeColor(GLfloat values[])
 
 void CreateColorBuffer()
 {
-  static GLfloat g_color_buffer[36];
+  static GLfloat g_color_buffer[108];
   RandomizeColor(g_color_buffer);
   glGenBuffers(1, &CBO);
   glBindBuffer(GL_ARRAY_BUFFER, CBO);
