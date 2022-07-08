@@ -17,7 +17,8 @@ void RotationMatrix()
 	 **The first line creates a new 4-by-4 matrix and initializes it to the identity matrix. 
 	 **The glm::rotate function multiplies this matrix by a rotation transformation of "AngleinRadians" degrees around the Z axis. 
 	 **So the multiplication in this case is between (AngleInRadians multiplied by z axis).
-	 **Remember that since the screen lies in the XY plane, the Z axis is the axis you want to rotate.
+	 **Remember that since the screen lies in the XY plane, the Z axis is the axis you want to rotate for 2D objects.
+	 **For 3D objects you can rotate on XYZ axes.
 	 **Draw a XY cartesian graph and add a Z axis in between,then draw a circle around the graph starting from the Z axis line, 
 	 **you'll understand this better. 
 	 */
