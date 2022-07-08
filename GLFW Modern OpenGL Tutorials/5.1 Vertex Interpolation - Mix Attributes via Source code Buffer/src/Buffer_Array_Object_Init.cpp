@@ -31,6 +31,12 @@ void CreateColorBuffer()
    **DO NOT bind the colors on a VAO, or else the verices will be discarded. only one VAO buffer
    **can be loaded during runtime, and having colors without vertices doesn't make any sense.
    **/
+   
+   /**
+   **If we have 1 triangles, and a triangle has 3 vertices, and each vertex has 3 RGB values:
+   **3x3 = 9 RGB values for 1 triangle. 
+   **For a cube: 12*3 = 36 Vertices, 36*3 RGB values = 108.
+   */
 
   static GLfloat g_vertex_color_buffer[] =  
   {
