@@ -20,7 +20,7 @@ void RotationMatrix()
 	 **Remember that since the screen lies in the XY plane, the Z axis is the axis you want to rotate for 2D objects.
 	 **For 3D objects you can rotate on XYZ axes.
 	 **NOTE: If you want to rotate XYZ axes with 3D, don't do it in one matrix, but 3 matrixes. In each matrix you must set to
-	 **1.0f the axis value you want to multiply by the angle value.
+	 **1.0f the axis value you want to multiply by the angle value. See chapter 4.4/With Cube
 	 **Draw a XY cartesian graph and add a Z axis in between,then draw a circle around the graph starting from the Z axis line, 
 	 **you'll understand this better. 
 	 */
