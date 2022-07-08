@@ -3,6 +3,7 @@
 
 /** 
  **WIth a cube we need to change our camera prespective, or else we will always see it in front, like a 2D object.
+ **See Chapter 4.5 for a detailed explaination of how the camera matrix works.
  */
 void CameraAngle(GLFWwindow *window)
 {
