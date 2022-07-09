@@ -16,6 +16,9 @@ void CreateVertexBuffer()
   In Detail:
   **We first generate one buffer that can store data into VBO
   ** We bind this target to openGL via GL_ARRAY_BUFFER: indicates that the vertex values have to be packed as an array.
+  ** Note: once this buffer is binded, it gives a pointer to openGL where to write the data, but if you bind another buffer
+  ** soon after the first bind function with another VBO, the last binded VBO will be the one where you write the data.
+  **See chapter 2.1 for Vertex Buffer and Array object handling.
   ** Writing data into this buffer following these arguments:
   **-Size of the buffer in bytes
   **-Pointer to the buffer
@@ -29,11 +32,12 @@ void CreateVertexBuffer()
    **We Generated a buffer on VBO which contans a block of data representing our vertices, but GL doesn't know what this data is yet
    **So, we first bind the VBO with the data to be sended, then we generate an object that tells to GL, that this is an Array of
    **vertices with the attributes and coordinates, the VAO (Vertex Array Object). It works as an interpreter of the data stored in the buffer.
+   **Then when we bind the vertex array, we're going to render it. We can bind the VAO when we want, not necessarily after the generation.
    */
   glGenVertexArrays(1, &VAO);
   glBindVertexArray(VAO);
   
-//Handles the attributes for the vertex buffer (in this case, coordinates, at index 0, colors can be at index 1 etc)
+//Handles the attributes for the current binded vertex buffer (in this case, coordinates, at index 0, colors can be at index 1 etc)
 //each vertex attribarray and pointer, gives an indexing to the attributes to be used in the shader, via a layout number.
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
