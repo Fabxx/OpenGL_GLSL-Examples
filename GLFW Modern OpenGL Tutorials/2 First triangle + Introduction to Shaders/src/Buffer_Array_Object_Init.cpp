@@ -33,6 +33,7 @@ void CreateVertexBuffer()
   glGenVertexArrays(1, &VAO);
   glBindVertexArray(VAO);
   
+//NOTE: Despite the name, this has to be used in each buffer that has to be passed in the shaders. Color buffers, texture buffers etc.
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
