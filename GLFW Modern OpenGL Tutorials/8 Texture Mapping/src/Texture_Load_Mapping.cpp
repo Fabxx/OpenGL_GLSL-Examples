@@ -6,7 +6,7 @@
  ** NOTE: it is not recommended to use jpg, use BMP or DDS instead.
  ** We first set the flip from STBI, because open GL reads texture from bottom to top,
  **while STBI reads the images from top to bottom.
- **-Width and height indicate the textuer resoltuion (Must be a power of 2 resolution, 64x64, 128x128, 256x256, 512x512 etc.)
+ **-Width and height indicate the texture resolution (Must be a power of 2 resolution, 64x64, 128x128, 256x256, 512x512 etc.)
  **-Bytes per pixel indicates the color depth on the textures (1 bbp = 1 = 8 bit color depth - 2bbp = 16 bit depth - 3bbp = 24 bit depth
  ** 4bbp = 32 bit depth - 5bbp = 40 bit depth. and so on.)
  **-Stbi_load gets the image data from the given file.
