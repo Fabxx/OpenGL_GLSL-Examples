@@ -33,7 +33,8 @@ void CreateVertexBuffer()
   glGenVertexArrays(1, &VAO);
   glBindVertexArray(VAO);
   
-//NOTE: Despite the name, this has to be used in each buffer that has to be passed in the shaders. Color buffers, texture buffers etc.
+//Handles the attributes for the vertex buffer (in this case, coordinates, at index 0, colors can be at index 1 etc)
+//each vertex attribarray and pointer, gives an indexing to the attributes to be used in the shader, via a layout number.
   glEnableVertexAttribArray(0);
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
