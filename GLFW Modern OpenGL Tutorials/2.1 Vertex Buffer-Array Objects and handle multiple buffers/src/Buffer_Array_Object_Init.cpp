@@ -41,8 +41,8 @@ void VertexCoordinates()
    **We bind the vertex array VAO[0] to the first buffer, we bind again VBO[0] 
    **instead of VBO[1] since this was the last one binded above, and we set up the 
    **attribute index to 0.
-   **Then we set the attrib pointer, with the index 0 links the VAO with the VBO,
-   **which also points to the last binded buffer.
+   **Then we set the attrib pointer which also points to the last binded buffer. 
+   **with the index 0 it links the VAO[0] with the VBO[0],
    */
   
   glGenVertexArrays(2, VAO);
