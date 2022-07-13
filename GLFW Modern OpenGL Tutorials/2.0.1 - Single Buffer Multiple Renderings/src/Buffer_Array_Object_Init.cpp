@@ -50,6 +50,7 @@ void VertexCoordinates()
    **since the vertex array will be binded here we won't have to do it in main like the 2.1 example.
    **But in this case i want to change the triangles each time to update the same buffer, instead of having multiple buffers
    **So i update in the loop when i press the A key.
+   **NOTE: I't sbetter to work with multiple buffers once we understand how the Pipeline works, to improve the speed of the program.
    */
   glBindVertexArray(VAO);
   
