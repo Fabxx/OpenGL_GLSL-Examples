@@ -1,5 +1,9 @@
 #include "Buffer_Array_Object_Init.hh"
 
+/*NOTE: Since openGL is a state machine, and it can only render one main buffer, it's more convenient to do one buffer per each attribute,
+  and update those buffers with new values when we need it (adding, removing, updating vertices, colors etc). If we do multiple buffers, in any
+  case we'll have to unload the previous binded buffer and load the new one.*/
+
 void VertexCoordinates()
 {
   //Two set of vertices for each buffer.
