@@ -3,7 +3,7 @@
 
  layout (location = 0) in vec3 Position;
 
-/**Making 3 3D vectors with RGBA values, each vector is a vertex for x y and z.
+/**Making 3 3D vectors with RGB values, each vector is a vertex for x y and z.
  **the gl_VertexID indexes the colors for each vertex into one value, making a 
  **static smooth transition. (It's the same thing as the color randomizer, but in shader.)
  **I personally preferr to generate data in code, then let the shader just handle the data.
